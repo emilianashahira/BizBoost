@@ -1,0 +1,111 @@
+<app-navbar></app-navbar> <!-- Navigation bar -->
+
+<!-- Welcome Banner -->
+<div *ngIf="showBanner" class="welcome-banner animate__animated" [ngClass]="{ 'animate__fadeOut': isFadingOut }">
+  <div class="overlay">
+    <img src="http://localhost:5000/uploads/welcome.png" alt="Welcome" class="welcome-image" />
+    <br>
+    <button class="btn btn-accent explore-btn mt-4" (click)="startExploring()">
+      <i class="bi bi-arrow-right-circle me-2"></i>Start Exploring
+    </button>
+  </div>
+</div>
+
+
+<div class="container-fluid px-4 mt-4">
+
+  <!-- 🌟 Welcome Header Image (Top Banner) -->
+<div class="top-banner-container animate__animated animate__fadeIn">
+  <img [src]="'http://localhost:5000/uploads/welcome.png'" alt="Welcome Banner" class="top-banner-img" />
+</div>
+  
+  <!-- 🎨 Search Filter Section -->
+  <div class="search-filter-section p-3 rounded-4 shadow mb-4 animate__animated animate__fadeIn"
+       style="background: linear-gradient(135deg, #2A1B3D, #4B1D74); color: white;">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-3" placeholder="🔍 Search by name"
+               [(ngModel)]="searchQuery" (input)="onSearch()">
+      </div>
+      <div class="col-md-4">
+        <select class="form-select rounded-3" [(ngModel)]="selectedCategory" (change)="onSearch()">
+          <option value="">All Categories</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select class="form-select rounded-3" [(ngModel)]="selectedLocation" (change)="onSearch()">
+          <option value="">All Locations</option>
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business Cards -->
+  <div class="row mt-3 g-4">
+    <ng-container *ngIf="!loading && paginatedBusinesses.length > 0; else noResults">
+      <div class="col-lg-4 col-md-6" *ngFor="let business of paginatedBusinesses; let i = index">
+        <div class="card business-card shadow-sm border-0 h-100 animate__animated animate__fadeInUp"
+             [ngStyle]="{'animation-delay': (i * 100) + 'ms'}">
+          <img [src]="business.main_image ? 'http://localhost:5000' + business.main_image : 'assets/default-business.jpg'"
+               class="card-img-top business-img" alt="Business Image">
+
+          <div class="card-body">
+            <h5 class="card-title fw-semibold text-bizboost">
+              <i class="bi bi-shop me-1 text-success"></i> {{ business.name }}
+            </h5>
+            <p class="card-text text-muted">{{ business.description | slice:0:120 }}...</p>
+            <div class="mt-2">
+              <span class="badge bg-danger bg-opacity-75 me-2">
+                <i class="bi bi-geo-alt-fill me-1"></i>{{ business.location }}
+              </span>
+              <span class="badge bg-info bg-opacity-75 text-dark">
+                <i class="bi bi-tags-fill me-1"></i>{{ business.category }}
+              </span>
+            </div>
+          </div>
+
+          <div class="card-footer bg-white border-0 text-center">
+            <a [routerLink]="['/business', business.id]" class="btn btn-accent w-100 rounded-pill">
+              <i class="bi bi-eye-fill me-1"></i> View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Loading Spinner -->
+    <ng-template [ngIf]="loading">
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- No Results Message -->
+    <ng-template #noResults>
+      <div class="text-center py-5 text-muted">
+        <i class="bi bi-exclamation-triangle fs-1 text-warning"></i>
+        <p class="mt-3">No businesses found matching your search.</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-4" *ngIf="totalPages > 1 && !loading">
+    <ul class="pagination pagination-rounded">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="changePage(currentPage - 1)">«</button>
+      </li>
+      <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+          [class.active]="currentPage === i + 1">
+        <button class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="changePage(currentPage + 1)">»</button>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2>Edit Business</h2>
+  
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Business Name</label>
+        <input type="text" class="form-control" formControlName="name" required>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input type="text" class="form-control" formControlName="category" required>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-control" formControlName="location" required>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Contact</label>
+        <input type="text" class="form-control" formControlName="contact" required>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" formControlName="description" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Upload Image</label>
+        <input type="file" (change)="onFileSelected($event)" class="form-control">
+        <button (click)="uploadImage()" class="btn btn-success mt-2">Upload</button>
+      </div>
+      
+  
+      <button type="submit" class="btn btn-primary">Update Business</button>
+    </form>
+  </div>
+  

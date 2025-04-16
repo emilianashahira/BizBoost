@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --primary-color: #D83F87;
+    --dark-bg: #2A1B3D;
+    --secondary-bg: #44318D;
+    --accent-color: #E98074;
+    --soft-bg: #A4B3B6;
+  
+    --text-light: #ffffff;
+    --text-dark: #1a1a1a;
+  }
+  

@@ -1,0 +1,100 @@
+<app-navbar></app-navbar> <!-- Navigation bar -->
+
+<div class="container mt-5 mb-5">
+  <div class="card shadow-lg animate__animated animate__fadeIn" 
+       style="border-radius: 20px; background-color: #2A1B3D; color: white; overflow: hidden;">
+    
+    <div class="card-body p-4">
+      <!-- Heading -->
+      <h2 class="text-center mb-4 animate__animated animate__fadeInDown" style="color: #D83F87;">🚀 Start a Project</h2>
+
+      <form (ngSubmit)="registerBusiness()" class="animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="row g-4">
+          <!-- Left Column -->
+          <div class="col-md-6">
+            <!-- Business Name -->
+            <div>
+              <label class="form-label">Business Name</label>
+              <input type="text" class="form-control rounded-3" [(ngModel)]="businessData.name" name="name" required>
+            </div>
+
+            <!-- Category -->
+            <div>
+              <label class="form-label">Category</label>
+              <select class="form-select rounded-3" [(ngModel)]="businessData.category" name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Food">Food</option>
+                <option value="Apparel">Apparel</option>
+              </select>
+            </div>
+
+            <!-- District -->
+            <div>
+              <label class="form-label">District</label>
+              <input type="text" class="form-control rounded-3" [(ngModel)]="businessData.location" name="location" required>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <label class="form-label">Contact</label>
+              <input type="text" class="form-control rounded-3" [(ngModel)]="businessData.contact" name="contact" required>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-6">
+            <!-- Address -->
+            <div>
+              <label class="form-label">Full Address</label>
+              <textarea class="form-control rounded-3" [(ngModel)]="businessData.address" name="address" rows="2" required></textarea>
+            </div>
+
+            <!-- Description -->
+            <div>
+              <label class="form-label">Description</label>
+              <textarea class="form-control rounded-3" [(ngModel)]="businessData.description" name="description" rows="3" required></textarea>
+            </div>
+
+            <!-- Operation Hours -->
+            <div>
+              <label class="form-label">Hours of Operation <small class="text-muted">(e.g., Mon: Closed, Tue: 11:30 AM - 5 PM)</small></label>
+              <textarea class="form-control rounded-3" [(ngModel)]="businessData.hours_operation" name="hours_operation" rows="3"
+                        placeholder="Mon: Closed&#10;Tue: 11:30 AM - 5:00 PM&#10;Wed: 11:30 AM - 5:00 PM"></textarea>
+            </div>
+
+            <!-- Price Range -->
+            <div>
+              <label class="form-label">Price Range <small class="text-muted">(e.g., RM10 - RM50)</small></label>
+              <input type="text" class="form-control rounded-3" [(ngModel)]="businessData.price_range" name="price_range"
+                     placeholder="RM10 - RM50">
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mt-4 text-center animate__animated animate__fadeInUp animate__delay-2s">
+          <button type="submit" class="btn px-5 py-2"
+                  style="background-color: #D83F87; color: white; font-weight: bold; border-radius: 30px; transition: 0.3s;">
+            <i class="bi bi-send me-2"></i>Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Popup -->
+  <div #alertModal class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content shadow-lg rounded-4">
+        <div class="modal-body text-center p-4">
+          <p #modalMessage class="mb-0 fs-5"></p>
+        </div>
+        <div class="modal-footer justify-content-center border-0 pb-4">
+          <button type="button" class="btn" style="background-color: #E98074; color: white;" data-bs-dismiss="modal">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

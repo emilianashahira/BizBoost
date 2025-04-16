@@ -1,0 +1,129 @@
+.table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .nav-link:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+  }
+  
+  img.rounded-circle {
+    border: 2px solid #ccc;
+    object-fit: cover;
+  }
+
+  .card {
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  .card {
+    transition: transform 0.2s ease;
+  }
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  
+  .badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 1rem;
+  }
+  
+  
+  .nav-tabs .nav-link.active {
+    background: linear-gradient(135deg, #D83F87, #6610f2);
+    color: white;
+    border: none;
+  }
+  
+  .nav-tabs .nav-link {
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .table th {
+    background-color: #f3f4f6;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-sm {
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  
+  .card-header-gradient {
+    background: linear-gradient(135deg, #D83F87, #6610f2);
+    color: white;
+  }
+
+  /* === Floating Navbar === */
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: #ffffff;
+  border: 2px solid #D83F87;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  z-index: 1050;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+.floating-nav .nav-icon {
+  font-size: 1.5rem;
+  color: #D83F87;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.floating-nav .nav-icon:hover {
+  transform: scale(1.2);
+  color: #6610f2;
+}
+.bottom-padding-buffer {
+  padding-bottom: 120px; /* adjust this based on navbar height */
+}
+
+.business-card {
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f8f9fa, #fff);
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.modal-content {
+  border-radius: 1rem;
+  background-color: #fefefe;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+}

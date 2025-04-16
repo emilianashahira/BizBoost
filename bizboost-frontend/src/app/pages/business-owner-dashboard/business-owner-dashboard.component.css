@@ -1,0 +1,219 @@
+/* === Profile Logo Animation === */
+.main-image-circle {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInDown 0.8s ease-in-out;
+}
+.main-image-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* === Floating Navbar === */
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: #ffffff;
+  border: 2px solid #D83F87;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  z-index: 1050;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+.floating-nav .nav-icon {
+  font-size: 1.5rem;
+  color: #D83F87;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.floating-nav .nav-icon:hover {
+  transform: scale(1.2);
+  color: #6610f2;
+}
+
+/* === Section Cards Fade In === */
+.card {
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* === Image Gallery === */
+.gallery-thumbnail {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.gallery-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === Icon & Button Hover Effects === */
+.card .btn {
+  transition: transform 0.2s ease;
+}
+.card .btn:hover {
+  transform: scale(1.05);
+}
+.card .bi {
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+.card .bi:hover {
+  transform: rotate(8deg);
+}
+
+/* === Star Ratings Animation === */
+.bi-star, .bi-star-fill, .bi-star-half {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.bi-star:hover, .bi-star-fill:hover, .bi-star-half:hover {
+  transform: scale(1.1);
+  color: #ffca28;
+}
+
+/* === Feedback Text Styling === */
+.feedback-list-container .card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* === Map Styling === */
+.map-container iframe {
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+}
+
+/* === Modal Gradient Header === */
+.modal-header {
+  background: linear-gradient(135deg, #D83F87, #6610f2);
+  color: white;
+}
+
+/* === Buttons === */
+.btn-primary,
+.btn-success,
+.btn-outline-primary:hover {
+  background-color: #6610f2 !important;
+  border-color: #6610f2 !important;
+}
+.btn-outline-primary {
+  color: #6610f2 !important;
+  border-color: #6610f2 !important;
+}
+.btn-outline-primary:hover {
+  color: #fff !important;
+}
+.btn-danger {
+  background-color: #D83F87 !important;
+  border-color: #D83F87 !important;
+}
+.btn-danger:hover {
+  background-color: #b2326f !important;
+  border-color: #b2326f !important;
+}
+
+/* === Toast === */
+.toast-body {
+  font-weight: 500;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.text-gradient {
+  background: linear-gradient(to right, #6610f2, #D83F87);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #6610f2 !important;
+  color: #fff !important;
+  border-radius: 50px;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: #6610f2;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #D83F87;
+}
+
+.tab-content .tab-pane {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-box {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+.info-box:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(102, 16, 242, 0.1);
+  transform: translateY(-2px);
+}
+
+.bottom-padding-buffer {
+  padding-bottom: 120px; /* adjust this based on navbar height */
+}
+
+.img-thumbnail {
+  object-fit: cover;
+  max-width: 100%;
+  border: 3px solid #6610f2;
+}
+
+.main-image-preview {
+  transition: transform 0.3s ease;
+}
+.main-image-preview:hover {
+  transform: scale(1.05);
+}
+
+

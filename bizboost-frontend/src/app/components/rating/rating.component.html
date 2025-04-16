@@ -1,0 +1,37 @@
+<div class="card p-3 mb-4 shadow-sm bg-light rounded">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+  </div>
+
+  <!-- Star Rating Input -->
+  <div *ngIf="authService.isLoggedIn()" class="star-rating">
+    <span *ngFor="let star of [1,2,3,4,5]"
+          (click)="setUserRating(star)"
+          (mouseover)="hoverRating = star"
+          (mouseleave)="hoverRating = 0"
+          class="star">
+      <i class="bi"
+         [class.bi-star-fill]="star <= (hoverRating || userRating)"
+         [class.bi-star]="star > (hoverRating || userRating)">
+      </i>
+    </span>
+  </div>
+
+  <div *ngIf="!authService.isLoggedIn()" class="mt-2">
+    <div class="alert alert-warning p-2 text-center">
+      <i class="bi bi-box-arrow-in-right me-1"></i>
+      <a routerLink="/login">Login</a> to submit a rating
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div #ratingToast class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        ✅ Your rating has been submitted!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

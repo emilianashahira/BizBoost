@@ -1,0 +1,44 @@
+<!-- ✍️ Feedback Form -->
+<div *ngIf="authService.isLoggedIn(); else loginMessage">
+  <div class="card shadow-sm border-0 animate__animated animate__fadeInUp">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0"><i class="bi bi-chat-left-text me-2"></i> Leave Feedback</h5>
+    </div>
+    <div class="card-body bg-light">
+      <textarea [(ngModel)]="feedbackText"
+                placeholder="Write your feedback..."
+                class="form-control mb-3"
+                rows="3"></textarea>
+      <button (click)="submitFeedback()" class="btn btn-primary rounded-pill px-4">
+        <i class="bi bi-send-fill me-1"></i>Submit Feedback
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 🚫 Login Prompt -->
+<ng-template #loginMessage>
+  <div class="alert alert-warning shadow-sm mt-3">
+    <i class="bi bi-exclamation-circle me-2"></i>
+    Please <a routerLink="/login" class="text-primary fw-bold">log in</a> to leave feedback.
+  </div>
+</ng-template>
+
+<!-- ✅ Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="feedbackToast"
+       class="toast align-items-center text-white bg-success border-0 shadow"
+       role="alert"
+       aria-live="assertive"
+       aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body fw-bold">
+        <i class="bi bi-check-circle me-2"></i>Feedback submitted successfully!
+      </div>
+      <button type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"></button>
+    </div>
+  </div>
+</div>

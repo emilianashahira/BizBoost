@@ -1,0 +1,178 @@
+.banner-img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.business-card {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* ⬅️ More visible shadow */
+  background-color: #ffffff;
+}
+
+.business-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* ⬅️ Stronger hover shadow */
+}
+
+.card-body {
+  padding: 1rem 1.25rem;
+}
+
+.card-footer {
+  padding: 0.75rem 1.25rem;
+}
+
+
+.business-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
+
+.btn-accent {
+  background-color: #D83F87;
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-accent:hover {
+  background-color: #B12C6A;
+  transform: scale(1.02);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accent color override */
+.text-bizboost {
+  color: #D83F87 !important;
+}
+
+.business-card {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.business-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.btn-accent {
+  background: linear-gradient(to right, #6610f2, #D83F87);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(to right, #5300c8, #b32c6c);
+  transform: scale(1.02);
+}
+
+.pagination .page-link {
+  color: #D83F87;
+  border-radius: 8px;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #D83F87;
+  color: white;
+  border: none;
+}
+
+.welcome-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(20, 10, 50, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation-duration: 1s;
+}
+
+.welcome-banner .overlay {
+  text-align: center;
+  color: white;
+  padding: 20px;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3); /* Slight dark overlay on top of image */
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 16px;
+
+}
+
+.explore-btn {
+  background: linear-gradient(to right, #6610f2, #D83F87);
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(to right, #520dc2, #b22c6d);
+  transform: scale(1.05);
+}
+
+/* 🖼️ Top Banner Styles */
+.top-banner-container {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.top-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+

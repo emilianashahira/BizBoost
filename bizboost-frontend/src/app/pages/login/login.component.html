@@ -1,0 +1,71 @@
+<app-navbar></app-navbar> <!-- Navigation bar -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <!-- Card drops in from top -->
+      <div class="card shadow-lg animate__animated animate__fadeInDown" style="background-color: #2A1B3D; color: #ffffff; border-radius: 20px;">
+        <div class="card-body p-4">
+          <!-- Heading fades in after card -->
+          <h2 class="text-center mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="color: #D83F87;">Welcome Back!</h2>
+
+          <!-- Error Alert shakes on appear -->
+          <div *ngIf="errorMessage" class="alert alert-danger text-center animate__animated animate__shakeX">
+            {{ errorMessage }}
+          </div>
+
+          <form (ngSubmit)="login()">
+            <!-- Email Field -->
+            <div class="mb-3 animate__animated animate__fadeInUp animate__delay-2s">
+              <label class="form-label">Email Address:</label>
+              <input type="email" class="form-control" [(ngModel)]="credentials.email" name="email" required style="border-radius: 12px;">
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3 animate__animated animate__fadeInUp animate__delay-3s">
+              <label class="form-label">Password:</label>
+              <input type="password" class="form-control" [(ngModel)]="credentials.password" name="password" required style="border-radius: 12px;">
+            </div>
+
+            <!-- Login Button -->
+            <div class="animate__animated animate__fadeInUp animate__delay-4s">
+              <button type="submit" class="btn w-100"
+                      style="background-color: #D83F87; color: white; border-radius: 30px; font-weight: bold;">
+                Login
+              </button>
+            </div>
+          </form>
+
+          <!-- Sign-up Link -->
+          <div class="text-center mt-3 animate__animated animate__fadeInUp animate__delay-5s">
+            <p>Don't have an account?
+              <a href="/register" style="color: #E98074; text-decoration: underline;">Sign up here</a>
+            </p>
+          </div>
+          
+
+          <!-- Business Registration Link -->
+          <div class="text-center mt-2 animate__animated animate__fadeInUp animate__delay-6s" *ngIf="errorMessage?.includes('register your business')">
+            <a href="register" style="color: #E98074; text-decoration: underline;">Click here to register your business</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Toast for success -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast align-items-center text-white bg-success border-0" role="alert" #toastRef>
+    <div class="d-flex">
+      <div class="toast-body" #toastMessage></div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ❌ Error Message -->
+<div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center animate__animated animate__fadeIn">
+  {{ errorMessage }}
+</div>
+
+

@@ -1,0 +1,23 @@
+.star-rating .bi {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: transform 0.2s ease;
+}
+
+.star-rating .bi-star-fill {
+  color: #f7b731;
+}
+
+.star-rating .bi-star {
+  color: #ddd;
+}
+
+.star-rating .bi:hover {
+  transform: scale(1.2);
+}
+
+.toast-body {
+  font-size: 1rem;
+  font-weight: 500;
+}
